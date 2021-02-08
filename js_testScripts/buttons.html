@@ -1,0 +1,32 @@
+<button id="test">Click Std!</button>
+<script>
+  function Button1(){
+    this.count = 0;
+    this.clicked = false;
+    this.click =  function(){
+      this.clicked = true;
+      this.count ++;
+      assert(button1.clicked, `clicketi ${button1.count}`);
+    };
+  }
+  var button1 = new Button1();
+  var elem = document.getElementById("test");
+  elem.addEventListener("click", button1.click);
+</script>
+
+
+<button id="test1">Click Arrow!</button>
+<script>
+  function Button(){
+      this.count = 0;
+    this.clicked = false;
+    this.click = () => {
+        this.count ++;
+      this.clicked = true;
+      assert(button.clicked,`clackety ${this.count}`);//
+    };
+  }
+  var button = new Button(); 
+  var elem = document.getElementById("test1");
+  elem.addEventListener("click", button.click);
+</script>

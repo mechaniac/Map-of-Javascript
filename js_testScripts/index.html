@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- Comment -->
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="./myLib.js"></script>
+    <script defer src="./script.js"></script>
+
+    
+</head>
+
+<body>
+<div id="results">
+
+</div>
+
+<div class="a" style="background-color: brown; width: 300px; height: 300px;" >
+    <div class="b"></div>
+</div>
+
+<div id="callback"></div>
+
+<button id="b1">b1</button>
+<script>
+    var b1 = document.getElementById('b1')
+
+    function B1(){
+        this.a = 0;
+        this.click = function(){
+            this.a ++;
+            b1.innerHTML +=this.a;
+        }
+
+        this.arrowClick = ()=>{
+            this.a ++;
+            b1.innerHTML += this.a;
+        }
+    }
+
+
+    fb1 = new B1()
+
+    b1.addEventListener('click',fb1.click)
+    b1.addEventListener('click',fb1.arrowClick)
+</script>
+hello
+</body>
+
+</html>
